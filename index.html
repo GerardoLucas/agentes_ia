@@ -904,7 +904,7 @@ async function enviar() {
 
   // ── POST al webhook de n8n ──────────────────────────
   try {
-    const res = await fetch("http://localhost:5678/webhook-test/quipus-credito", {
+    const res = await fetch("https://lglm78.app.n8n.cloud/webhook/quipus-credito", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(datos)
