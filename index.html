@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solicitud de Crédito — QUIPUS FINANCIERA</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rojo:         #C8102E;
+    --rojo-dark:    #9B0B22;
+    --rojo-mid:     #E01535;
+    --rojo-light:   #FDEAED;
+    --dorado:       #C8A951;
+    --dorado-light: #F5E6B8;
+    --dorado-dark:  #9B7C2A;
+    --blanco:       #FFFFFF;
+    --crema:        #FDF9F2;
+    --gris-bg:      #F5F3F0;
+    --gris-claro:   #E4DED8;
+    --gris-texto:   #5C5047;
+    --negro:        #1E1610;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Sora', sans-serif;
+    background: var(--gris-bg);
+    min-height: 100vh;
+    color: var(--negro);
+  }
+
+  /* ══ HEADER ══ */
+  header {
+    background: var(--rojo-dark);
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(155,11,34,.45);
+    position: sticky; top: 0; z-index: 100;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 48px;
+  }
+
+  .logo { display: flex; align-items: center; gap: 16px; }
+
+  .logo-escudo {
+    width: 58px; height: 70px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,.4));
+  }
+
+  .logo-texto { line-height: 1.15; }
+  .logo-nombre {
+    font-family: 'Fraunces', serif;
+    font-size: 20px; font-weight: 900;
+    color: var(--blanco); letter-spacing: -0.2px;
+  }
+  .logo-slogan {
+    font-size: 10px; color: rgba(255,255,255,.72);
+    font-weight: 400; letter-spacing: 0.5px;
+  }
+
+  .header-badges { display: flex; gap: 10px; align-items: center; }
+  .hbadge {
+    padding: 5px 14px;
+    border: 1px solid rgba(200,169,81,.4);
+    border-radius: 4px; font-size: 12px;
+    color: rgba(255,255,255,.88); font-weight: 500;
+    display: flex; align-items: center; gap: 5px;
+    background: rgba(200,169,81,.08);
+  }
+
+  .header-franja {
+    height: 6px;
+    background: linear-gradient(90deg, var(--rojo) 33%, var(--blanco) 33%, var(--blanco) 66%, var(--rojo) 66%);
+  }
+
+  .header-tagline {
+    background: var(--rojo);
+    padding: 7px 48px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 28px; flex-wrap: wrap;
+    border-bottom: 2px solid var(--dorado);
+  }
+  .tagline-pill {
+    font-size: 11.5px; color: rgba(255,255,255,.9);
+    font-weight: 500; display: flex; align-items: center; gap: 6px;
+  }
+  .tagline-pill em { color: var(--dorado-light); font-style: italic; font-family: 'Fraunces', serif; }
+  .tagline-sep { color: var(--dorado); font-size: 14px; opacity: .6; }
+
+ 
+
+
+  /* ══ MAIN ══ */
+  main { max-width: 920px; margin: 0 auto; padding: 44px 20px 80px; }
+
+  .section-header {
+    text-align: center; margin-bottom: 32px;
+    animation: fadeUp .6s ease both;
+  }
+  .section-tag {
+    display: inline-block; padding: 5px 20px;
+    background: var(--rojo); color: var(--blanco);
+    border-radius: 3px; font-size: 11px; font-weight: 700;
+    letter-spacing: 1.8px; text-transform: uppercase;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(200,16,46,.3);
+  }
+  .section-header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(26px, 4vw, 40px); font-weight: 900;
+    color: var(--rojo-dark); margin-bottom: 10px; line-height: 1.15;
+  }
+  .section-header h1 em { font-style: italic; color: var(--dorado-dark); }
+  .section-header p {
+    font-size: 15px; color: var(--gris-texto);
+    max-width: 480px; margin: 0 auto; line-height: 1.7;
+  }
+
+  .fin-claras {
+    display: flex; gap: 12px; margin: 0 0 28px;
+    flex-wrap: wrap; animation: fadeUp .6s .08s ease both;
+  }
+  .fc-item {
+    flex: 1; min-width: 160px;
+    background: var(--blanco);
+    border: 1.5px solid var(--gris-claro);
+    border-top: 3px solid var(--rojo);
+    border-radius: 7px; padding: 14px 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .fc-emoji { font-size: 22px; flex-shrink: 0; }
+  .fc-text { font-size: 12px; font-weight: 700; color: var(--rojo-dark); line-height: 1.4; }
+  .fc-text span { display: block; font-weight: 400; color: var(--gris-texto); font-size: 11px; }
+
+  .hero-quote {
+    background: linear-gradient(135deg, var(--rojo-dark) 0%, var(--rojo) 100%);
+    border-radius: 10px; padding: 18px 28px; margin-bottom: 28px;
+    display: flex; align-items: center; gap: 18px;
+    animation: fadeUp .6s .1s ease both;
+    border: 1px solid rgba(200,169,81,.3);
+    box-shadow: 0 4px 20px rgba(155,11,34,.2);
+  }
+  .hq-icon { font-size: 30px; flex-shrink: 0; }
+  .hq-text {
+    font-family: 'Fraunces', serif; font-size: 15.5px;
+    font-style: italic; color: rgba(255,255,255,.92); line-height: 1.5;
+  }
+  .hq-text strong {
+    color: var(--dorado-light); font-style: normal;
+    font-family: 'Sora', sans-serif; font-size: 11px;
+    display: block; margin-top: 5px; font-weight: 600;
+    letter-spacing: .6px; text-transform: uppercase;
+  }
+
+  /* STEPS */
+  .steps {
+    display: flex; justify-content: center; align-items: center;
+    margin-bottom: 28px; animation: fadeUp .6s .12s ease both;
+  }
+  .si {
+    display: flex; align-items: center; gap: 7px;
+    padding: 7px 14px; border-radius: 5px;
+    font-size: 13px; font-weight: 600; color: #bbb; transition: all .3s;
+  }
+  .si.active { color: var(--rojo); background: rgba(200,16,46,.07); }
+  .si.done { color: var(--dorado-dark); }
+  .sn {
+    width: 26px; height: 26px; border-radius: 50%;
+    border: 2px solid currentColor;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; flex-shrink: 0;
+  }
+  .si.active .sn { background: var(--rojo); border-color: var(--rojo); color: #fff; }
+  .si.done .sn { background: var(--dorado); border-color: var(--dorado); color: #fff; }
+  .sdiv { width: 28px; height: 2px; background: var(--gris-claro); }
+
+  /* CARD */
+  .card {
+    background: var(--blanco); border: 1px solid var(--gris-claro);
+    border-radius: 10px; box-shadow: 0 4px 24px rgba(155,11,34,.08);
+    overflow: hidden; animation: fadeUp .6s .15s ease both;
+  }
+  .card-top-bar { height: 5px; background: linear-gradient(90deg, var(--rojo-dark), var(--rojo), var(--dorado)); }
+
+  /* PANELS */
+  .panel { display: none; padding: 38px 42px; animation: panelIn .35s ease both; }
+  .panel.active { display: block; }
+  @keyframes panelIn { from{opacity:0;transform:translateX(10px)} to{opacity:1;transform:translateX(0)} }
+
+  .ph {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 28px; padding-bottom: 20px;
+    border-bottom: 2px solid var(--gris-claro);
+  }
+  .ph-icon {
+    width: 52px; height: 52px; background: var(--rojo);
+    border-radius: 8px; display: flex; align-items: center;
+    justify-content: center; font-size: 24px; flex-shrink: 0;
+  }
+  .ph-title h2 {
+    font-family: 'Fraunces', serif; font-size: 21px; font-weight: 700;
+    color: var(--rojo-dark); margin-bottom: 2px;
+  }
+  .ph-title p { font-size: 13px; color: var(--gris-texto); }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .full { grid-column: 1/-1; }
+
+  .f { display: flex; flex-direction: column; gap: 5px; }
+  .f label {
+    font-size: 11.5px; font-weight: 700;
+    letter-spacing: .5px; text-transform: uppercase; color: var(--gris-texto);
+  }
+  .f label .req { color: var(--rojo); margin-left: 2px; }
+  .f input, .f select {
+    width: 100%; padding: 11px 14px; background: var(--blanco);
+    border: 1.5px solid var(--gris-claro); border-radius: 6px;
+    color: var(--negro); font-family: 'Sora', sans-serif; font-size: 14.5px;
+    transition: all .2s; outline: none; appearance: none;
+  }
+  .f input::placeholder { color: #c0b5ae; }
+  .f input:focus, .f select:focus {
+    border-color: var(--rojo); box-shadow: 0 0 0 3px rgba(200,16,46,.1);
+  }
+  .hint { font-size: 11px; color: #a09088; line-height: 1.5; }
+  .ferr { font-size: 11px; color: var(--rojo); display: none; font-weight: 600; }
+  .ferr.show { display: block; }
+
+  .pfx { position: relative; }
+  .pfx::before {
+    content: attr(data-pfx); position: absolute; left: 13px; top: 50%;
+    transform: translateY(-50%); font-size: 14px; font-weight: 700;
+    color: var(--rojo); pointer-events: none; z-index: 1;
+  }
+  .pfx input { padding-left: 42px; }
+
+  .rg { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+  .ro {
+    display: flex; align-items: center; gap: 9px;
+    padding: 11px 13px; border: 1.5px solid var(--gris-claro);
+    border-radius: 7px; cursor: pointer; transition: all .2s;
+    font-size: 14px; color: #333; background: var(--blanco);
+  }
+  .ro:hover { border-color: var(--rojo); background: var(--rojo-light); }
+  .ro.sel { border-color: var(--rojo); background: rgba(200,16,46,.05); }
+  .ro input[type="radio"] {
+    width: 16px; height: 16px; padding: 0; margin: 0; flex-shrink: 0;
+    accent-color: var(--rojo); border: none; background: transparent; box-shadow: none;
+  }
+  .ro input[type="radio"]:focus { box-shadow: none; }
+  .ro-titulo { font-weight: 700; font-size: 13.5px; color: var(--negro); }
+  .ro-sub { font-size: 11px; color: #a09088; }
+
+  .sv { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 900; color: var(--rojo-dark); }
+  .st { position: relative; background: var(--gris-claro); height: 6px; border-radius: 3px; margin: 10px 0; }
+  .sf { position: absolute; left: 0; top: 0; height: 100%; background: linear-gradient(90deg, var(--rojo-dark), var(--dorado)); border-radius: 3px; pointer-events: none; }
+  input[type="range"] { position: absolute; inset: -9px 0; opacity: 0; cursor: pointer; width: 100%; padding: 0; margin: 0; border: none; background: transparent; box-shadow: none; height: 24px; }
+  input[type="range"]:focus { box-shadow: none; border: none; background: transparent; }
+  .sl { display: flex; justify-content: space-between; font-size: 11px; color: #b0a098; font-weight: 600; }
+
+  .alert { display: none; padding: 11px 15px; border-radius: 6px; font-size: 13px; margin-bottom: 16px; gap: 8px; align-items: center; font-weight: 600; }
+  .alert.show { display: flex; }
+  .ae { background: var(--rojo-light); border: 1.5px solid rgba(200,16,46,.35); color: var(--rojo); }
+
+  .brow {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 30px; padding-top: 20px; border-top: 2px solid var(--gris-claro);
+  }
+  .btn {
+    padding: 12px 28px; border-radius: 6px; font-family: 'Sora',sans-serif;
+    font-size: 14.5px; font-weight: 700; cursor: pointer; border: none;
+    transition: all .2s; display: flex; align-items: center; gap: 8px;
+  }
+  .btn-p { background: var(--rojo); color: #fff; box-shadow: 0 3px 12px rgba(200,16,46,.35); }
+  .btn-p:hover { background: var(--rojo-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,16,46,.45); }
+  .btn-g { background: var(--dorado); color: var(--rojo-dark); box-shadow: 0 3px 12px rgba(200,169,81,.35); font-weight: 800; }
+  .btn-g:hover { background: var(--dorado-dark); color: #fff; transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--gris-texto); border: 1.5px solid var(--gris-claro); }
+  .btn-ghost:hover { background: var(--gris-bg); color: var(--negro); border-color: #c8b8b0; }
+  .btn-ghost.h { visibility: hidden; }
+
+  /* ══ LOADING ══ */
+  #loading { display: none; padding: 64px 40px; text-align: center; }
+  #loading.show { display: block; }
+  .ring {
+    width: 72px; height: 72px;
+    border: 4px solid var(--gris-claro);
+    border-top-color: var(--rojo); border-right-color: var(--dorado);
+    border-radius: 50%; animation: spin .9s linear infinite;
+    margin: 0 auto 22px;
+  }
+  .ltitle { font-family: 'Fraunces',serif; font-size: 22px; font-weight: 700; color: var(--rojo-dark); margin-bottom: 6px; }
+  .lsub { font-size: 14px; color: var(--gris-texto); margin-bottom: 28px; }
+  .lsteps { display: flex; flex-direction: column; gap: 8px; max-width: 340px; margin: 0 auto; }
+  .ls {
+    display: flex; align-items: center; gap: 11px;
+    padding: 11px 15px; border-radius: 7px;
+    background: var(--gris-bg); border: 1.5px solid var(--gris-claro);
+    font-size: 13px; color: #b0a098; transition: all .4s; text-align: left;
+  }
+  .ls.done { color: #6a7f3a; border-color: rgba(106,127,58,.3); background: rgba(106,127,58,.06); font-weight: 600; }
+  .ls.active { color: var(--rojo); border-color: rgba(200,16,46,.3); background: rgba(200,16,46,.05); font-weight: 600; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+  .ls.active .dot { animation: pulse 1s ease infinite; }
+
+  /* ══ RESULTADO ══ */
+  #resultado { display: none; padding: 44px 42px; }
+  #resultado.show { display: block; animation: panelIn .5s ease both; }
+
+  /* Resultado en crudo de n8n */
+  .res-raw {
+    background: var(--gris-bg);
+    border: 1.5px solid var(--gris-claro);
+    border-left: 5px solid var(--rojo);
+    border-radius: 0 8px 8px 0;
+    padding: 28px 32px;
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--negro);
+    text-align: left;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .res-label {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px;
+    color: var(--rojo); font-weight: 700; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .res-membrete {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    margin-bottom: 24px; text-align: center;
+  }
+  .res-barra { width: 3px; height: 40px; border-radius: 2px; }
+  .acts {
+    display: flex; gap: 10px; justify-content: center; margin-top: 24px;
+    flex-wrap: wrap; padding-top: 20px; border-top: 2px solid var(--gris-claro);
+  }
+
+  /* Error */
+  .estate { text-align: center; padding: 40px 20px; }
+  .eicon { font-size: 44px; margin-bottom: 14px; }
+  .estate h3 { font-size: 20px; font-weight: 700; color: var(--rojo-dark); font-family: 'Fraunces',serif; margin-bottom: 8px; }
+  .estate p { color: var(--gris-texto); font-size: 14px; line-height: 1.7; }
+  .ecode { font-size: 11px; color: #bbb; margin-top: 8px; font-family: monospace; background: var(--gris-bg); padding: 6px 10px; border-radius: 4px; display: inline-block; }
+
+  /* FOOTER */
+  footer {
+    background: var(--rojo-dark); padding: 32px 48px;
+    margin-top: 60px; border-top: 4px solid var(--dorado);
+  }
+  .footer-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,.12);
+    margin-bottom: 16px; flex-wrap: wrap; gap: 20px;
+  }
+  .footer-logo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .footer-taglines { display: flex; flex-direction: column; gap: 5px; }
+  .ft-line { font-size: 12px; color: rgba(255,255,255,.5); font-style: italic; font-family: 'Fraunces', serif; }
+  .footer-links { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; }
+  .footer-links a { font-size: 12px; color: rgba(255,255,255,.5); text-decoration: none; }
+  .footer-links a:hover { color: var(--dorado-light); }
+  .footer-bottom { display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.3); flex-wrap: wrap; gap: 8px; }
+
+  .trust { display: flex; justify-content: center; gap: 14px; margin: 28px 0 0; flex-wrap: wrap; }
+  .ti { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gris-texto); background: var(--blanco); border: 1px solid var(--gris-claro); padding: 6px 14px; border-radius: 5px; font-weight: 500; }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes spin { to{transform:rotate(360deg)} }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+  @keyframes pop { from{opacity:0;transform:scale(.65)} to{opacity:1;transform:scale(1)} }
+
+  @media(max-width:680px){
+    .header-top{padding:12px 18px}
+    .header-tagline{padding:7px 18px;gap:14px}
+    main{padding:24px 14px 60px}
+    .panel,#loading,#resultado{padding:24px 18px}
+    .grid2{grid-template-columns:1fr}
+    .rg{grid-template-columns:1fr}
+    .brow{flex-direction:column-reverse;gap:9px}
+    .btn{width:100%;justify-content:center}
+    .btn-ghost.h{display:none}
+    .acts{flex-direction:column}
+    .acts .btn{width:100%;justify-content:center}
+    footer{padding:24px 18px}
+    .footer-top{flex-direction:column}
+    .hbadge{display:none}
+    
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-top">
+    <div class="logo">
+      <!-- Escudo Nacional del Perú en SVG -->
+      <svg class="logo-escudo" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 4 L94 20 L94 72 C94 96 74 112 50 118 C26 112 6 96 6 72 L6 20 Z" fill="#C8102E" stroke="#9B0B22" stroke-width="1.5"/>
+        <path d="M50 5 L6 21 L6 72 C6 73 6 74 6.1 75 L50 75 Z" fill="#FFFFFF"/>
+        <path d="M50 5 L94 21 L94 72 C94 73 94 74 93.9 75 L50 75 Z" fill="#FFFFFF"/>
+        <path d="M6.1 75 C8 90 16 102 27 110 L50 118 L73 110 C84 102 92 90 93.9 75 Z" fill="#C8102E"/>
+        <ellipse cx="25" cy="52" rx="11" ry="7" fill="#C8A951" opacity=".9"/>
+        <ellipse cx="25" cy="41" rx="5" ry="7" fill="#C8A951" opacity=".9"/>
+        <line x1="18" y1="58" x2="16" y2="66" stroke="#9B7C2A" stroke-width="1.5"/>
+        <line x1="22" y1="59" x2="21" y2="67" stroke="#9B7C2A" stroke-width="1.5"/>
+        <line x1="28" y1="59" x2="29" y2="67" stroke="#9B7C2A" stroke-width="1.5"/>
+        <line x1="32" y1="58" x2="34" y2="66" stroke="#9B7C2A" stroke-width="1.5"/>
+        <ellipse cx="25" cy="35" rx="3.5" ry="3.5" fill="#C8A951" opacity=".9"/>
+        <circle cx="26.5" cy="33.5" r="0.9" fill="#5C3010"/>
+        <ellipse cx="74" cy="38" rx="10" ry="12" fill="#2D6A1F" opacity=".85"/>
+        <ellipse cx="68" cy="44" rx="7" ry="9" fill="#2D6A1F" opacity=".8"/>
+        <ellipse cx="80" cy="44" rx="7" ry="9" fill="#2D6A1F" opacity=".8"/>
+        <rect x="72" y="57" width="4" height="14" rx="1.5" fill="#6B3A1F"/>
+        <circle cx="43" cy="80" r="3.5" fill="#C8A951" opacity=".85"/>
+        <circle cx="50" cy="77" r="3.5" fill="#C8A951" opacity=".85"/>
+        <circle cx="57" cy="80" r="3.5" fill="#C8A951" opacity=".85"/>
+        <circle cx="47" cy="74" r="2.5" fill="#C8A951" opacity=".7"/>
+        <circle cx="53" cy="74" r="2.5" fill="#C8A951" opacity=".7"/>
+        <path d="M50 4 L94 20 L94 72 C94 96 74 112 50 118 C26 112 6 96 6 72 L6 20 Z" fill="none" stroke="#C8A951" stroke-width="2.5"/>
+        <line x1="50" y1="5" x2="50" y2="75" stroke="#C8A951" stroke-width="1.2" opacity=".7"/>
+        <line x1="6.1" y1="75" x2="93.9" y2="75" stroke="#C8A951" stroke-width="1.2" opacity=".7"/>
+      </svg>
+      <div class="logo-texto">
+        <div class="logo-nombre">QUIPUS FINANCIERA</div>
+        <div class="logo-slogan">Solidez digital para el Perú profundo y el ciudadano emprendedor</div>
+      </div>
+    </div>
+    <div class="header-badges">
+      <div class="hbadge">🔒 Conexión Segura</div>
+      <div class="hbadge">📋 SBS Regulado</div>
+    </div>
+  </div>
+  <div class="header-franja"></div>
+  <div class="header-tagline">
+    <div class="tagline-pill">💪 <em>"Tu chamba es esfuerzo. Nuestra misión es protegerla."</em></div>
+  </div>
+</header>
+
+<!-- ══ WEBHOOK CONFIG BAR ══ -->
+
+
+<!-- ══ MAIN ══ -->
+<main>
+
+  <div class="section-header">
+    <div class="section-tag">✦ Evaluación Inteligente ✦</div>
+    <h1>Solicitud de Crédito</h1>
+    <p>Completa el formulario. Evaluamos tu perfil y te damos respuesta inmediata — sin letra chica, sin sorpresas.</p>
+  </div>
+
+  <div class="fin-claras">
+    <div class="fc-item">
+      <div class="fc-emoji">📋</div>
+      <div class="fc-text">Cuotas fijas y claras <span>Sabes exactamente cuánto pagas cada mes</span></div>
+    </div>
+    <div class="fc-item">
+      <div class="fc-emoji">🚫</div>
+      <div class="fc-text">Sin letra chica <span>Todo lo que importa, a la vista</span></div>
+    </div>
+    <div class="fc-item">
+      <div class="fc-emoji">⚡</div>
+      <div class="fc-text">Respuesta inmediata <span>Inteligecia especializado en emprendedores</span></div>
+    </div>
+    <div class="fc-item">
+      <div class="fc-emoji">🌿</div>
+      <div class="fc-text">Para el Perú que trabaja <span>Desde el emprendedor hasta el productor</span></div>
+    </div>
+  </div>
+
+  <div class="hero-quote">
+    <div class="hq-icon">🤝</div>
+    <div class="hq-text">
+      <strong>✦ QUIPUS FINANCIERA —  Confianza digital para el Perú que produce ✦ </strong>
+    </div>
+  </div>
+
+  <!-- STEPS -->
+  <div class="steps" id="steps">
+    <div class="si active" id="s1"><div class="sn">1</div><span>Datos personales</span></div>
+    <div class="sdiv"></div>
+    <div class="si" id="s2"><div class="sn">2</div><span>Situación laboral</span></div>
+    <div class="sdiv"></div>
+    <div class="si" id="s3"><div class="sn">3</div><span>Tu crédito</span></div>
+    <div class="sdiv"></div>
+    <div class="si" id="s4"><div class="sn">4</div><span>Resultado</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top-bar"></div>
+
+    <!-- PANEL 1 -->
+    <div class="panel active" id="p1">
+      <div class="ph">
+        <div class="ph-icon">👤</div>
+        <div class="ph-title">
+          <h2>Datos Personales</h2>
+          <p>Información básica para identificarte como solicitante</p>
+        </div>
+      </div>
+      <div class="alert ae" id="a1">⚠️ Por favor corrige los campos marcados.</div>
+      <div class="grid2">
+        <div class="f"><label>Nombres y apellidos <span class="req">*</span></label><input id="nombre" type="text" placeholder="Ej: María García López"><div class="ferr" id="e-nombre">Ingresa tu nombre completo</div></div>
+        <div class="f"><label>DNI / RUC <span class="req">*</span></label><input id="dni" type="text" placeholder="Ej: 46123789" maxlength="11"><div class="ferr" id="e-dni">DNI: 8 dígitos · RUC: 11 dígitos</div></div>
+        <div class="f"><label>Correo electrónico <span class="req">*</span></label><input id="email" type="email" placeholder="correo@ejemplo.com"><div class="ferr" id="e-email">Ingresa un correo válido</div></div>
+        <div class="f"><label>Teléfono / Celular <span class="req">*</span></label><input id="tel" type="tel" placeholder="987 654 321" maxlength="9"><div class="ferr" id="e-tel">Ingresa 9 dígitos</div></div>
+        <div class="f"><label>Fecha de nacimiento <span class="req">*</span></label><input id="fnac" type="date"><div class="ferr" id="e-fnac">Debes ser mayor de 18 años</div></div>
+        <div class="f"><label>Estado civil</label>
+          <select id="ecivil"><option value="">Seleccionar...</option><option>Soltero/a</option><option>Casado/a</option><option>Conviviente</option><option>Divorciado/a</option><option>Viudo/a</option></select>
+        </div>
+        <div class="f"><label>N° de dependientes</label>
+          <select id="dep"><option value="0">0 (ninguno)</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4 o más</option></select>
+        </div>
+        <div class="f"><label>Grado de instrucción</label>
+          <select id="inst"><option value="">Seleccionar...</option><option>Secundaria</option><option>Técnica</option><option>Universitaria</option><option>Posgrado / Maestría</option></select>
+        </div>
+      </div>
+      <div class="brow">
+        <button class="btn btn-ghost h">—</button>
+        <button class="btn btn-p" onclick="ir(2)">Continuar →</button>
+      </div>
+    </div>
+
+    <!-- PANEL 2 -->
+    <div class="panel" id="p2">
+      <div class="ph">
+        <div class="ph-icon">💼</div>
+        <div class="ph-title">
+          <h2>Situación Laboral</h2>
+          <p>Tu perfil de ingresos es clave — no importa si eres formal o informal</p>
+        </div>
+      </div>
+      <div class="alert ae" id="a2">⚠️ Por favor corrige los campos marcados.</div>
+
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:11.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--gris-texto);margin-bottom:9px">Tipo de empleo <span style="color:var(--rojo)">*</span></label>
+        <div class="rg">
+          <label class="ro sel" onclick="pick(this,'empleo','dependiente')">
+            <input type="radio" name="empleo" value="dependiente" checked>
+            <span style="font-size:20px">🏢</span>
+            <div><div class="ro-titulo">Dependiente</div><div class="ro-sub">Planilla / 5ta categoría</div></div>
+          </label>
+          <label class="ro" onclick="pick(this,'empleo','independiente')">
+            <input type="radio" name="empleo" value="independiente">
+            <span style="font-size:20px">🧑‍💻</span>
+            <div><div class="ro-titulo">Independiente</div><div class="ro-sub">4ta categoría / RUC</div></div>
+          </label>
+          <label class="ro" onclick="pick(this,'empleo','empresario')">
+            <input type="radio" name="empleo" value="empresario">
+            <span style="font-size:20px">🏭</span>
+            <div><div class="ro-titulo">Empresario</div><div class="ro-sub">Persona jurídica</div></div>
+          </label>
+          <label class="ro" onclick="pick(this,'empleo','jubilado')">
+            <input type="radio" name="empleo" value="jubilado">
+            <span style="font-size:20px">🏖️</span>
+            <div><div class="ro-titulo">Jubilado / Pensionista</div><div class="ro-sub">ONP / AFP</div></div>
+          </label>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="f"><label>Empresa / Empleador <span class="req">*</span></label><input id="empleador" type="text" placeholder="Nombre de empresa, negocio o actividad"><div class="ferr" id="e-emp">Campo requerido</div></div>
+        <div class="f"><label>Cargo / Ocupación</label><input id="cargo" type="text" placeholder="Ej: Analista, Comerciante, Agricultor"></div>
+        <div class="f"><label>Antigüedad laboral</label>
+          <select id="antig"><option value="0">Menos de 6 meses</option><option value="1">6 meses – 1 año</option><option value="2">1 – 2 años</option><option value="3" selected>2 – 5 años</option><option value="4">Más de 5 años</option></select>
+        </div>
+        <div class="f"><label>Sector económico</label>
+          <select id="sector"><option value="">Seleccionar...</option><option>Comercio</option><option>Servicios</option><option>Construcción</option><option>Manufactura</option><option>Salud</option><option>Educación</option><option>Finanzas / Seguros</option><option>Minería</option><option>Tecnología</option><option>Agropecuario</option><option>Artesanía / Textil</option><option>Turismo</option><option>Otro</option></select>
+        </div>
+        <div class="f">
+          <label>Ingresos mensuales netos (S/) <span class="req">*</span></label>
+          <div class="pfx" data-pfx="S/"><input id="ingresos" type="number" placeholder="3,500" min="0" step="100"></div>
+          <div class="hint">Monto que recibes después de descuentos e impuestos</div>
+          <div class="ferr" id="e-ing">Ingresa tus ingresos mensuales</div>
+        </div>
+        <div class="f">
+          <label>Otros ingresos mensuales (S/)</label>
+          <div class="pfx" data-pfx="S/"><input id="otros" type="number" placeholder="0" min="0" step="100"></div>
+          <div class="hint">Alquileres, segunda actividad, pensiones, etc.</div>
+        </div>
+        <div class="f full">
+          <label>Cuotas mensuales que pagas actualmente (S/)</label>
+          <div class="pfx" data-pfx="S/"><input id="deuda" type="number" placeholder="0" min="0" step="100"></div>
+          <div class="hint">Suma de pagos por tarjetas, préstamos vigentes, etc.</div>
+        </div>
+      </div>
+      <div class="brow">
+        <button class="btn btn-ghost" onclick="ir(1)">← Atrás</button>
+        <button class="btn btn-p" onclick="ir(3)">Continuar →</button>
+      </div>
+    </div>
+
+    <!-- PANEL 3 -->
+    <div class="panel" id="p3">
+      <div class="ph">
+        <div class="ph-icon">💰</div>
+        <div class="ph-title">
+          <h2>Detalle del Crédito</h2>
+          <p>Indica el monto, plazo y propósito — cuotas fijas, sin sorpresas</p>
+        </div>
+      </div>
+      <div class="alert ae" id="a3">⚠️ Selecciona el plazo y propósito del crédito.</div>
+
+      <div style="display:flex;flex-direction:column;gap:26px">
+        <div class="f">
+          <label>Monto a solicitar <span class="req">*</span></label>
+          <div class="sv" id="monto-lbl">S/ 10,000</div>
+          <div class="st">
+            <div class="sf" id="monto-sf" style="width:6%"></div>
+            <input type="range" id="monto" min="1000" max="150000" step="500" value="10000" oninput="sliderUpdate()">
+          </div>
+          <div class="sl"><span>S/ 1,000</span><span>S/ 75,000</span><span>S/ 150,000</span></div>
+        </div>
+
+        <div class="f">
+          <label>Plazo de pago <span class="req">*</span></label>
+          <div class="rg" style="grid-template-columns:repeat(3,1fr)">
+            <label class="ro" onclick="pick(this,'plazo','12')"><input type="radio" name="plazo" value="12"><div><div style="font-weight:700;font-size:22px;color:var(--rojo-dark)">12</div><div class="ro-sub">meses</div></div></label>
+            <label class="ro" onclick="pick(this,'plazo','24')"><input type="radio" name="plazo" value="24"><div><div style="font-weight:700;font-size:22px;color:var(--rojo-dark)">24</div><div class="ro-sub">meses</div></div></label>
+            <label class="ro sel" onclick="pick(this,'plazo','36')"><input type="radio" name="plazo" value="36" checked><div><div style="font-weight:700;font-size:22px;color:var(--rojo-dark)">36</div><div class="ro-sub">meses</div></div></label>
+            <label class="ro" onclick="pick(this,'plazo','48')"><input type="radio" name="plazo" value="48"><div><div style="font-weight:700;font-size:22px;color:var(--rojo-dark)">48</div><div class="ro-sub">meses</div></div></label>
+            <label class="ro" onclick="pick(this,'plazo','60')"><input type="radio" name="plazo" value="60"><div><div style="font-weight:700;font-size:22px;color:var(--rojo-dark)">60</div><div class="ro-sub">meses</div></div></label>
+          </div>
+          <div class="ferr" id="e-plazo">Selecciona un plazo</div>
+        </div>
+
+        <div class="f">
+          <label>Propósito del crédito <span class="req">*</span></label>
+          <select id="proposito">
+            <option value="">Seleccionar propósito...</option>
+            <option>Capital de trabajo / Negocio</option>
+            <option>Mejoramiento de vivienda</option>
+            <option>Compra de vehículo</option>
+            <option>Educación / Estudios</option>
+            <option>Consolidación de deudas</option>
+            <option>Gastos médicos / Salud</option>
+            <option>Equipamiento del hogar o negocio</option>
+            <option>Siembra / Campaña agrícola</option>
+            <option>Herramientas y maquinaria</option>
+            <option>Libre disponibilidad</option>
+            <option>Otro</option>
+          </select>
+          <div class="ferr" id="e-prop">Selecciona el propósito del crédito</div>
+        </div>
+      </div>
+
+      <div class="brow">
+        <button class="btn btn-ghost" onclick="ir(2)">← Atrás</button>
+        <button class="btn btn-g" onclick="enviar()">🤖 Enviar a evaluación IA →</button>
+      </div>
+    </div>
+
+    <!-- LOADING -->
+    <div id="loading">
+      <div class="ring"></div>
+      <div class="ltitle">Evaluando tu solicitud…</div>
+      <div class="lsub">El motor IA n8n está procesando tu perfil</div>
+      <div class="lsteps">
+        <div class="ls active" id="l1"><div class="dot"></div>Agente 1 — Validando datos del cliente</div>
+        <div class="ls" id="l2"><div class="dot"></div>Agente 2 — Consultando Equifax / SBS</div>
+        <div class="ls" id="l3"><div class="dot"></div>Agente 3 — Calculando ratios financieros</div>
+        <div class="ls" id="l4"><div class="dot"></div>Agente 4 — Motor IA emitiendo decisión</div>
+        <div class="ls" id="l5"><div class="dot"></div>Agente 5 — Generando cronograma de pagos</div>
+      </div>
+    </div>
+
+    <!-- RESULTADO -->
+    <div id="resultado"></div>
+
+  </div><!-- /card -->
+
+  <div class="trust">
+    <div class="ti">🔒 Conexión SSL segura</div>
+    <div class="ti">🏛️ Supervisado por SBS</div>
+    <div class="ti">🤖 Motor IA vía n8n</div>
+    <div class="ti">🚫 Sin letra chica</div>
+    <div class="ti">⚡ Respuesta en segundos</div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo-row">
+        <svg width="36" height="44" viewBox="0 0 100 120" fill="none">
+          <path d="M50 4 L94 20 L94 72 C94 96 74 112 50 118 C26 112 6 96 6 72 L6 20 Z" fill="#C8102E" stroke="#C8A951" stroke-width="2"/>
+          <path d="M50 5 L6 21 L6 72 C6 73 6 74 6.1 75 L50 75 Z" fill="#FFFFFF"/>
+          <path d="M50 5 L94 21 L94 72 C94 73 94 74 93.9 75 L50 75 Z" fill="#FFFFFF"/>
+          <path d="M6.1 75 C8 90 16 102 27 110 L50 118 L73 110 C84 102 92 90 93.9 75 Z" fill="#C8102E"/>
+          <circle cx="43" cy="80" r="3" fill="#C8A951" opacity=".85"/>
+          <circle cx="50" cy="77" r="3" fill="#C8A951" opacity=".85"/>
+          <circle cx="57" cy="80" r="3" fill="#C8A951" opacity=".85"/>
+          <line x1="50" y1="5" x2="50" y2="75" stroke="#C8A951" stroke-width="1" opacity=".6"/>
+          <line x1="6.1" y1="75" x2="93.9" y2="75" stroke="#C8A951" stroke-width="1" opacity=".6"/>
+        </svg>
+        <div class="logo-texto">
+          <div class="logo-nombre" style="font-family:'Fraunces',serif;font-size:16px;font-weight:900;color:#fff">QUIPUS FINANCIERA</div>
+          <div class="logo-slogan" style="font-size:10px;color:rgba(255,255,255,.6)">Solidez digital para el Perú profundo y el emprendedor</div>
+        </div>
+      </div>
+      <div class="footer-taglines">
+   
+        <div class="ft-line">"Confianza digital para el Perú que produce."</div>
+
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#">Tasas y tarifas</a>
+      <a href="#">Política de privacidad</a>
+      <a href="#">Términos y condiciones</a>
+      <a href="#">Libro de reclamaciones</a>
+      <a href="#">Contacto</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>QUIPUS FINANCIERA | Lima, Perú — Supervisado por SBS</span>
+    <span>© QUIPUS FINANCIERA — Todos los derechos reservados | RUC: XX100001234</span>
+  </div>
+</footer>
+
+<script>
+// ══════════════════════════════════════════════════════
+//  ESTADO WEBHOOK
+// ══════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  // Restaurar URL guardada
+  const saved = localStorage.getItem('quipus_webhook') || '';
+  if (saved) {
+    document.getElementById('webhook-url').value = saved;
+    actualizarEstado();
+  }
+
+  // Max fecha nacimiento (>18 años)
+  const max = new Date();
+  max.setFullYear(max.getFullYear() - 18);
+  document.getElementById('fnac').max = max.toISOString().split('T')[0];
+
+  sliderUpdate();
+});
+
+function actualizarEstado() {
+  const url = document.getElementById('webhook-url').value.trim();
+  const el = document.getElementById('wb-status');
+  if (url.startsWith('http')) {
+    el.textContent = '✅ URL lista';
+    el.className = 'wb-status ok';
+    localStorage.setItem('quipus_webhook', url);
+  } else {
+    el.textContent = '⚠ Sin URL';
+    el.className = 'wb-status vacio';
+  }
+}
+
+// ══════════════════════════════════════════════════════
+//  SLIDER
+// ══════════════════════════════════════════════════════
+function sliderUpdate() {
+  const v = parseInt(document.getElementById('monto').value);
+  const pct = ((v - 1000) / 149000) * 100;
+  document.getElementById('monto-sf').style.width = pct + '%';
+  document.getElementById('monto-lbl').textContent = 'S/ ' + v.toLocaleString('es-PE');
+}
+
+// ══════════════════════════════════════════════════════
+//  RADIO
+// ══════════════════════════════════════════════════════
+function pick(lbl, name, val) {
+  document.querySelectorAll(`input[name="${name}"]`).forEach(r => r.closest('.ro')?.classList.remove('sel'));
+  lbl.classList.add('sel');
+  lbl.querySelector('input[type="radio"]').checked = true;
+}
+
+// ══════════════════════════════════════════════════════
+//  STEPS
+// ══════════════════════════════════════════════════════
+function setSteps(n) {
+  for (let i = 1; i <= 4; i++) {
+    const s = document.getElementById('s' + i);
+    s.classList.remove('active', 'done');
+    if (i < n) { s.classList.add('done'); s.querySelector('.sn').textContent = '✓'; }
+    else if (i === n) { s.classList.add('active'); s.querySelector('.sn').textContent = i; }
+    else s.querySelector('.sn').textContent = i;
+  }
+}
+
+function ir(n) {
+  const cur = panelActual();
+  if (n > cur && !validar(cur)) return;
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('p' + n)?.classList.add('active');
+  setSteps(n);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function panelActual() {
+  for (let i = 1; i <= 3; i++)
+    if (document.getElementById('p' + i)?.classList.contains('active')) return i;
+  return 1;
+}
+
+// ══════════════════════════════════════════════════════
+//  VALIDACIÓN
+// ══════════════════════════════════════════════════════
+function validar(n) {
+  let ok = true;
+  const e = (id, bad) => { document.getElementById(id)?.classList.toggle('show', bad); if (bad) ok = false; };
+
+  if (n === 1) {
+    document.getElementById('a1').classList.remove('show');
+    e('e-nombre', document.getElementById('nombre').value.trim().length < 3);
+    e('e-dni', !/^\d{8}(\d{3})?$/.test(document.getElementById('dni').value.trim()));
+    e('e-email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('email').value.trim()));
+    e('e-tel', !/^\d{9}$/.test(document.getElementById('tel').value.replace(/\s/g, '')));
+    const f = document.getElementById('fnac').value;
+    e('e-fnac', !f || (Date.now() - new Date(f)) / (365.25 * 86400000) < 18);
+    if (!ok) document.getElementById('a1').classList.add('show');
+  }
+
+  if (n === 2) {
+    document.getElementById('a2').classList.remove('show');
+    e('e-emp', document.getElementById('empleador').value.trim().length < 2);
+    e('e-ing', !(parseFloat(document.getElementById('ingresos').value) > 0));
+    if (!ok) document.getElementById('a2').classList.add('show');
+  }
+
+  if (n === 3) {
+    document.getElementById('a3').classList.remove('show');
+    e('e-plazo', !document.querySelector('input[name="plazo"]:checked'));
+    e('e-prop', !document.getElementById('proposito').value);
+    if (!ok) document.getElementById('a3').classList.add('show');
+  }
+
+  return ok;
+}
+
+// ══════════════════════════════════════════════════════
+//  RECOLECTAR DATOS DEL FORMULARIO
+// ══════════════════════════════════════════════════════
+function recolectar() {
+  return {
+    nombre:               document.getElementById('nombre').value.trim(),
+    dni:                  document.getElementById('dni').value.trim(),
+    email:                document.getElementById('email').value.trim(),
+    telefono:             document.getElementById('tel').value.trim(),
+    fecha_nacimiento:     document.getElementById('fnac').value,
+    estado_civil:         document.getElementById('ecivil').value,
+    dependientes:         parseInt(document.getElementById('dep').value),
+    instruccion:          document.getElementById('inst').value,
+    tipo_empleo:          document.querySelector('input[name="empleo"]:checked')?.value || 'dependiente',
+    empleador:            document.getElementById('empleador').value.trim(),
+    cargo:                document.getElementById('cargo').value.trim(),
+    antiguedad_laboral:   parseInt(document.getElementById('antig').value),
+    sector:               document.getElementById('sector').value,
+    ingresos_mensuales:   parseFloat(document.getElementById('ingresos').value) || 0,
+    otros_ingresos:       parseFloat(document.getElementById('otros').value) || 0,
+    deuda_mensual_actual: parseFloat(document.getElementById('deuda').value) || 0,
+    monto_solicitado:     parseInt(document.getElementById('monto').value),
+    plazo_meses:          parseInt(document.querySelector('input[name="plazo"]:checked')?.value),
+    proposito:            document.getElementById('proposito').value,
+    entidad:              'QUIPUS FINANCIERA',
+    timestamp:            new Date().toISOString(),
+    canal:                'WEB_FORMULARIO'
+  };
+}
+
+// ══════════════════════════════════════════════════════
+//  LOADING ANIMADO
+// ══════════════════════════════════════════════════════
+function mostrarCarga() {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('loading').classList.add('show');
+  document.getElementById('resultado').classList.remove('show');
+  document.getElementById('resultado').innerHTML = '';
+  setSteps(4);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  const ids = ['l1','l2','l3','l4','l5'];
+  const ms  = [0, 1400, 2900, 4500, 6200];
+  ids.forEach((id, i) => {
+    setTimeout(() => {
+      if (i > 0) document.getElementById(ids[i-1])?.classList.replace('active','done');
+      document.getElementById(id)?.classList.add('active');
+    }, ms[i]);
+  });
+}
+
+// ══════════════════════════════════════════════════════
+//  ENVIAR → n8n WEBHOOK  (patrón exacto de la imagen)
+// ══════════════════════════════════════════════════════
+async function enviar() {
+  
+
+  const datos = recolectar();   // objeto con todos los campos del formulario
+  mostrarCarga();
+
+  // ── POST al webhook de n8n ──────────────────────────
+  try {
+    const res = await fetch("http://localhost:5678/webhook-test/quipus-credito", {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(datos)
+    });
+
+    // Leer como texto primero (igual que la imagen)
+    const text = await res.text();
+
+    // Intentar parsear JSON; si falla, mostrar texto plano
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      data = null;
+    }
+
+    // Extraer output: data[0]?.output  ← patrón de la imagen
+    const output = data?.[0]?.output ?? data?.output ?? text;
+
+    mostrarRespuesta(output, datos);
+
+  } catch (err) {
+    mostrarError(err.message);
+  }
+}
+
+// ══════════════════════════════════════════════════════
+//  MOSTRAR RESPUESTA DE n8n  (sin calcular nada aquí)
+// ══════════════════════════════════════════════════════
+function mostrarRespuesta(output, datos) {
+  document.getElementById('loading').classList.remove('show');
+
+  document.getElementById('resultado').innerHTML = `
+    <div>
+      <!-- Membrete -->
+      <div class="res-membrete">
+        <div class="res-barra" style="background:linear-gradient(to bottom,var(--rojo-dark),var(--rojo))"></div>
+        <div>
+          <div style="font-size:12px;color:var(--gris-texto);text-transform:uppercase;letter-spacing:1px;font-weight:700">QUIPUS FINANCIERA</div>
+          <div style="font-size:11px;color:#aaa;font-style:italic;font-family:'Fraunces',serif">Resultado de Evaluación Crediticia — Motor IA n8n</div>
+        </div>
+        <div class="res-barra" style="background:linear-gradient(to bottom,var(--dorado),var(--dorado-dark))"></div>
+      </div>
+
+      <p style="color:var(--gris-texto);font-size:14px;margin-bottom:18px;text-align:center">
+        Estimado/a <strong style="color:var(--negro)">${datos.nombre}</strong> —
+        <span style="color:#aaa;font-size:12px">${new Date().toLocaleDateString('es-PE',{day:'2-digit',month:'long',year:'numeric'})}</span>
+      </p>
+
+      <!-- Respuesta directa de n8n -->
+      <div style="margin-bottom:8px">
+        <div class="res-label">📋 Respuesta del Motor IA</div>
+      </div>
+      <div class="res-raw" id="res-output">${escapeHtml(String(output))}</div>
+
+      <!-- Acciones -->
+      <div class="acts">
+        <button class="btn btn-ghost" onclick="location.reload()">← Nueva solicitud</button>
+        <button class="btn btn-ghost" onclick="window.print()">🖨️ Imprimir resultado</button>
+      </div>
+
+      <div style="margin-top:20px;padding-top:14px;border-top:1px solid var(--gris-claro);font-size:11px;color:#ccc;line-height:1.6;text-align:center">
+        QUIPUS FINANCIERA S.A. — Supervisado por la SBS.
+        Esta evaluación es referencial y no constituye oferta vinculante. Finanzas claras, sin letra chica.
+      </div>
+    </div>
+  `;
+
+  document.getElementById('resultado').classList.add('show');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ══════════════════════════════════════════════════════
+//  ERROR
+// ══════════════════════════════════════════════════════
+function mostrarError(msg) {
+  document.getElementById('loading').classList.remove('show');
+  document.getElementById('resultado').innerHTML = `
+    <div class="estate">
+      <div class="eicon">⚠️</div>
+      <h3>No se pudo conectar con n8n</h3>
+      <p>El formulario no recibió respuesta del webhook.<br>Verifica que:</p>
+      <ul style="text-align:left;max-width:380px;margin:12px auto;font-size:13px;color:var(--gris-texto);line-height:2">
+        <li>n8n esté activo y el flujo activado</li>
+        <li>La URL del webhook sea correcta</li>
+        <li>Si es local, uses ngrok para exponer n8n</li>
+        <li>El nodo "Respond to Webhook" exista en tu flujo</li>
+      </ul>
+      <div class="ecode">${escapeHtml(msg)}</div>
+      <div style="margin-top:22px;display:flex;gap:10px;justify-content:center">
+        <button class="btn btn-ghost" onclick="location.reload()">← Reintentar</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('resultado').classList.add('show');
+}
+
+// ══════════════════════════════════════════════════════
+//  UTIL: escapar HTML para mostrar texto plano seguro
+// ══════════════════════════════════════════════════════
+function escapeHtml(str) {
+  return str
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/\n/g,'<br>');
+}
+</script>
+
+</body>
+</html>
